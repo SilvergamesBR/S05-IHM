@@ -46,7 +46,7 @@ function reservarArmario() {
   
   // Impmimimos uma mensagem de reserva para o usuário.
   document.getElementById("resultado").innerText = `Olá, ${usuario.nome}! O armário ${armarioSorteado.id} foi reservado com sucesso!
-  \nA chave deve ser devolvida as ${armarioEmprestado.horaDevolução.getHours()}:${armarioEmprestado.horaDevolução.getMinutes()}, do dia ${armarioEmprestado.horaDevolução.getDay()} do mês ${armarioEmprestado.horaDevolução.getMonth()}`;
+  \nA chave deve ser devolvida as ${armarioEmprestado.horaDevolução.getHours()}:${armarioEmprestado.horaDevolução.getMinutes()}, do dia ${armarioEmprestado.horaDevolução.getDate()} do mês ${armarioEmprestado.horaDevolução.getMonth()+1}`;
 
   console.log(usuario);
   console.log(armarios);
