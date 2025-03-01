@@ -81,14 +81,13 @@ body {
 .news-slider {
     display: flex;
     overflow: hidden;
-    width: 300px;
-    /* Adjust width as needed */
+    width: 250px;
 }
 
 /* News card styling */
 .news-card {
     flex: 0 0 auto;
-    width: 300px;
+    width: 250px;
     margin-right: 16px;
     /* Space between cards */
     position: relative;

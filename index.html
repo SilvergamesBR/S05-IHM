@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dashboard App Inatel</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Cabeçalho -->
@@ -38,32 +40,32 @@
         </section>
       </main>
 
-      <!--Cards de noticias-->>
-      <main class="noticias">
-        <h2>Notícias</h2>
-        <div class="slider-container">
-          <button class="arrow left">&lt;</button>
-          <div class="news-slider">
-            <div class="news-card">
-              <img src="https://via.placeholder.com/300x200" alt="Notícia 1">
-              <h3>Notícia 1</h3>
-            </div>
-            <div class="news-card">
-              <img src="https://via.placeholder.com/300x200" alt="Notícia 2">
-              <h3>Notícia 2</h3>
-            </div>
-            <div class="news-card">
-              <img src="https://via.placeholder.com/300x200" alt="Notícia 3">
-              <h3>Notícia 3</h3>
-            </div>
-          </div>
-          <button class="arrow right">&gt;</button>
-        </div>
-      </main>
-      
     </div>
 
-    
+    <!--Cards de noticias-->>
+    <main class="noticias">
+      <h2>Notícias</h2>
+      <div class="slider-container">
+        <button class="arrow left">&lt;</button>
+        <div class="news-slider">
+          <div class="news-card">
+            <img src="https://via.placeholder.com/300x200" alt="Notícia 1">
+            <h3>Notícia 1</h3>
+          </div>
+          <div class="news-card">
+            <img src="https://via.placeholder.com/300x200" alt="Notícia 2">
+            <h3>Notícia 2</h3>
+          </div>
+          <div class="news-card">
+            <img src="https://via.placeholder.com/300x200" alt="Notícia 3">
+            <h3>Notícia 3</h3>
+          </div>
+        </div>
+        <button class="arrow right">&gt;</button>
+      </div>
+    </main>
+
+
 
     <!-- Rodapé -->
     <footer class="footer">
@@ -73,21 +75,21 @@
 
   <!--Script for noticias-->>
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const slider = document.querySelector('.news-slider');
       const leftArrow = document.querySelector('.arrow.left');
       const rightArrow = document.querySelector('.arrow.right');
-    
+
       // Adjust these values to match your card width and gap
       const scrollAmount = 300 + 16; // card width (300px) + margin (16px)
-    
+
       leftArrow.addEventListener('click', () => {
         slider.scrollBy({
           left: -scrollAmount,
           behavior: 'smooth'
         });
       });
-    
+
       rightArrow.addEventListener('click', () => {
         slider.scrollBy({
           left: scrollAmount,
@@ -95,7 +97,8 @@
         });
       });
     });
-    </script>
-    
+  </script>
+
 </body>
+
 </html>
