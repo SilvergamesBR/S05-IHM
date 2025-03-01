@@ -1,0 +1,121 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 16px;
+  }
+  
+  /* Container principal centralizado com espaçamento de 16px */
+  .container {
+    max-width: 414px; /* Tamanho lógico do viewport do iPhone 11 */
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 16px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 16px;
+    border: 1px solid #ccc;
+  }
+  
+  /* Cabeçalho e rodapé com cor de fundo para visual delimitação */
+  .header, .footer {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  /* Grid interno: inicialmente um layout de coluna única */
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  
+  /* Responsividade: em telas maiores, exibir sidebar e conteúdo lado a lado */
+  @media (min-width: 600px) {
+    .grid {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  
+  /* Estilização da sidebar */
+  .messages {
+    background-color: #6c757d;
+    color: #fff;
+    padding: 16px;
+  }
+  
+  /* Estilização do conteúdo */
+  .content {
+    background-color: #e9ecef;
+    padding: 16px;
+  }
+  
+  /* Cartões ou seções internas do conteúdo */
+  .card {
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    margin-bottom: 16px;
+    padding: 16px;
+    border-radius: 4px;
+  }
+
+  /* Estilização para a seção Notícias */
+.noticias {
+    padding: 16px;
+    background-color: #f9f9f9;
+  }
+  
+  .noticias h2 {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+  
+  /* Container horizontal para os cards */
+  .news-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* Para suavizar a rolagem em iOS */
+    padding-bottom: 8px;
+  }
+  
+  /* Estilização dos cards de notícia */
+  .news-card {
+    flex: 0 0 auto; /* Garante que cada card não encolha */
+    width: 300px;  /* Largura fixa ou adaptável conforme sua necessidade */
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    scroll-snap-align: start;
+  }
+  
+  /* Estilização da imagem */
+  .news-card img {
+    width: 100%;
+    display: block;
+  }
+  
+  /* Título sobreposto na parte superior da imagem */
+  .news-card h3 {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    margin: 0;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  
