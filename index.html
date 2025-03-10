@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
@@ -8,6 +9,7 @@
   <title>Dashboard App Inatel</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
   <div class="container">
     <!-- Cabeçalho -->
@@ -121,13 +123,17 @@
     });
   </script>
   <!-- Script for theme switching -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const themeToggle = document.querySelector('.theme-toggle');
-      themeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('aux-theme');
-      });
-    });
-  </script>
+  <script src="scripts.js"></script>
+
+  <div id="themeModal" class="modal">
+    <div class="modal-content">
+      <h2>Escolha o Tema</h2>
+      <button id="btnMainTheme">Tema original</button>
+      <button id="btnAuxTheme">Tema alternativo</button>
+      <button class="close-modal">&times;</button>
+    </div>
+  </div>
+
 </body>
+
 </html>
