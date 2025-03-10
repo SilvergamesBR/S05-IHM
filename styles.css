@@ -1,131 +1,177 @@
-/* Reset básico */
-* {
+/* CSS Variables for themes */
+:root {
+    --main-color: #0073D1;
+    --comp-1: #0031D1;
+    --comp-2: #00B5D1;
+    --comp-3: #00D1A8;
+    --comp-4: #1200D1;
+    --white: #fff;
+  }
+  
+  /* Aux theme overrides */
+  body.aux-theme {
+    --main-color: #FA4A00;
+    --comp-1: #FA1F00;
+    --comp-2: #FA7700;
+    --comp-3: #FA002B;
+    --comp-4: #FA9D00;
+  }
+  
+  /* Reset básico */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     padding: 16px;
-}
-
-/* Container principal centralizado com espaçamento de 16px */
-.container {
+  }
+  
+  /* Container principal centralizado */
+  .container {
     max-width: 414px;
-    /* Tamanho lógico do viewport do iPhone 11 */
     margin: 0 auto;
-    background-color: #fff;
+    background-color: var(--white);
     padding: 16px;
     display: grid;
     grid-template-rows: auto 1fr auto;
     gap: 16px;
     border: 1px solid #ccc;
-}
-
-/* Cabeçalho e rodapé com cor de fundo para visual delimitação */
-.header,
-.footer {
-    background-color: #007BFF;
-    color: #fff;
+  }
+  
+  /* Header with theme toggle and centered SVG logo */
+  .header {
+    background-color: var(--main-color);
+    color: var(--white);
     padding: 16px;
-    text-align: center;
-}
-
-/* Grid interno: inicialmente um layout de coluna única */
-.grid {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Theme toggle button in top-left corner */
+  .theme-toggle {
+    position: absolute;
+    left: 16px;
+    background: transparent;
+    border: 1px solid var(--white);
+    border-radius: 4px;
+    color: var(--white);
+    padding: 4px 8px;
+    cursor: pointer;
+  }
+  
+  /* Scale SVG logo to 20% of its original size and center it */
+  .svg_logo_inatel {
+    transform: scale(0.2);
+    transform-origin: center;
+  }
+  
+  /* Grid interno: inicialmente uma coluna */
+  .grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
-}
-
-/* Responsividade: em telas maiores, exibir sidebar e conteúdo lado a lado */
-@media (min-width: 600px) {
+  }
+  
+  /* Responsividade: exibir sidebar e conteúdo lado a lado em telas maiores */
+  @media (min-width: 600px) {
     .grid {
-        grid-template-columns: 1fr 2fr;
+      grid-template-columns: 1fr 2fr;
     }
-}
-
-/* Estilização da sidebar */
-.messages {
+  }
+  
+  /* Sidebar (mensagens) */
+  .messages {
     background-color: #6c757d;
-    color: #fff;
+    color: var(--white);
     padding: 16px;
-}
-
-/* Estilização do conteúdo */
-.content {
+  }
+  
+  /* Conteúdo principal */
+  .content {
     background-color: #e9ecef;
     padding: 16px;
-}
-
-/* Cartões ou seções internas do conteúdo */
-.card {
-    background-color: #fff;
+  }
+  
+  /* Cartões internos */
+  .card {
+    background-color: var(--white);
     border: 1px solid #dee2e6;
     margin-bottom: 16px;
     padding: 16px;
     border-radius: 4px;
-}
-
-/* Container for the slider with arrows */
-.slider-container {
+  }
+  
+  /* Slider container for news cards with arrow buttons */
+  .slider-container {
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-}
-
-/* Slider: display the cards in a row with overflow hidden */
-.news-slider {
+  }
+  
+  /* News slider: horizontal flex container */
+  .news-slider {
     display: flex;
     overflow: hidden;
     width: 200px;
-}
-
-/* News card styling */
-.news-card {
+  }
+  
+  /* News card styling */
+  .news-card {
     flex: 0 0 auto;
     width: 200px;
     margin-right: 16px;
-    /* Space between cards */
     position: relative;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-}
-
-.news-card img {
+  }
+  
+  .news-card img {
     width: 100%;
     display: block;
-}
-
-/* Title overlay on the image */
-.news-card h3 {
+  }
+  
+  /* Title overlay on news card */
+  .news-card h3 {
     position: absolute;
     top: 8px;
     left: 8px;
     margin: 0;
     padding: 4px 8px;
     background: rgba(0, 0, 0, 0.5);
-    color: #fff;
+    color: var(--white);
     border-radius: 4px;
     font-size: 1rem;
-}
-
-/* Arrow buttons styling */
-.arrow {
-    background: #007BFF;
-    color: #fff;
+  }
+  
+  /* Arrow buttons styling */
+  .arrow {
+    background: var(--main-color);
+    color: var(--white);
     border: none;
     padding: 8px 12px;
     cursor: pointer;
     font-size: 1.2rem;
     border-radius: 4px;
     margin: 0 8px;
-}
-
-.arrow:focus {
+  }
+  
+  .arrow:focus {
     outline: none;
-}
+  }
+  
+  /* Footer styling */
+  .footer {
+    background-color: var(--main-color);
+    color: var(--white);
+    padding: 16px;
+    text-align: center;
+  }
+  
