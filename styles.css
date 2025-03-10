@@ -51,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 50px ;
   }
   
   /* Theme toggle button in top-left corner */
