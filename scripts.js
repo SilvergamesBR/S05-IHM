@@ -1,11 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("load", function () {
     const themeModal = document.getElementById("themeModal");
     const btnMainTheme = document.getElementById("btnMainTheme");
     const btnAuxTheme = document.getElementById("btnAuxTheme");
     const closeModal = document.querySelector(".close-modal");
     const themeToggle = document.querySelector('.theme-toggle');
   
-    // Check localStorage for a saved theme and update the page accordingly
+    // Apply the saved theme from localStorage
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'aux') {
       document.body.classList.add('aux-theme');
