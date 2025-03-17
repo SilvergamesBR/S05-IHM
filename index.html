@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet">
@@ -9,12 +8,13 @@
   <title>Dashboard App Inatel</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
   <div class="container">
     <!-- Cabeçalho -->
     <header class="header">
-      <button class="theme-toggle"><span class="material-icons">contrast</span></button>
+      <button class="theme-toggle">
+        <span class="material-icons">contrast</span>
+      </button>
       <svg class="svg_logo_inatel" xmlns="http://www.w3.org/2000/svg" viewBox="100 150 390 116">
         <path class="path_logo" d="M127.455,156.988h21.287l-21.859,102.835H105.69L127.455,156.988L127.455,156.988z M225.618,208.048	
           l-10.941,51.775H194.51l9.726-45.911c0.286-1.168,0.477-2.312,0.62-3.456c0.143-1.144,0.214-2.145,0.214-3.027	
@@ -77,24 +77,13 @@
       </main>
     </div>
 
-    <!-- Cards de notícias -->
+    <!-- Carousel de Notícias -->
     <main class="noticias">
       <h2>Notícias</h2>
       <div class="slider-container">
         <button class="arrow left">&lt;</button>
         <div class="news-slider">
-          <div class="news-card">
-            <img src="https://via.placeholder.com/300x200" alt="Notícia 1">
-            <h3>Notícia 1</h3>
-          </div>
-          <div class="news-card">
-            <img src="https://via.placeholder.com/300x200" alt="Notícia 2">
-            <h3>Notícia 2</h3>
-          </div>
-          <div class="news-card">
-            <img src="https://via.placeholder.com/300x200" alt="Notícia 3">
-            <h3>Notícia 3</h3>
-          </div>
+          <!-- News cards will be added dynamically by scripts.js -->
         </div>
         <button class="arrow right">&gt;</button>
       </div>
@@ -106,25 +95,7 @@
     </footer>
   </div>
 
-  <!-- Scripts -->
-  <!-- Script for navigating news slider -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const slider = document.querySelector('.news-slider');
-      const leftArrow = document.querySelector('.arrow.left');
-      const rightArrow = document.querySelector('.arrow.right');
-      const scrollAmount = 200 + 16; // card width (200px) + margin (16px)
-      leftArrow.addEventListener('click', () => {
-        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      });
-      rightArrow.addEventListener('click', () => {
-        slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-      });
-    });
-  </script>
-  <!-- Script for theme switching -->
-  <script src="scripts.js"></script>
-
+  <!-- Modal para seleção de tema -->
   <div id="themeModal" class="modal">
     <div class="modal-content">
       <h2>Escolha o Tema</h2>
@@ -134,6 +105,7 @@
     </div>
   </div>
 
+  <!-- External scripts file -->
+  <script src="scripts.js"></script>
 </body>
-
 </html>

@@ -1,210 +1,207 @@
 /* CSS Variables for themes */
 :root {
-    --main-color: #0073D1;
-    --comp-1: #0031D1;
-    --comp-2: #00B5D1;
-    --comp-3: #00D1A8;
-    --comp-4: #1200D1;
-    --white: #fff;
-  }
-  
-  /* Aux theme overrides */
-  body.aux-theme {
-    --main-color: #FA4A00;
-    --comp-1: #FA1F00;
-    --comp-2: #FA7700;
-    --comp-3: #FA002B;
-    --comp-4: #FA9D00;
-  }
-  
-  /* Reset básico */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arimo', sans-serif;
-    background-color: #f0f0f0;
-    padding: 16px;
-  }
-  
-  /* Container principal centralizado */
-  .container {
-    max-width: 414px;
-    margin: 0 auto;
-    background-color: var(--white);
-    padding: 16px;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 16px;
-    border: 1px solid #ccc;
-  }
-  
-  /* Header with theme toggle and centered SVG logo */
-  .header {
-    background-color: var(--main-color);
-    color: var(--white);
-    padding: 16px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px ;
-  }
-  
-  /* Theme toggle button in top-left corner */
-  .theme-toggle {
-    position: absolute;
-    left: 16px;
-    background: transparent;
-    border-width: 0px;
-    color: var(--white);
-    padding: 4px 8px;
-    cursor: pointer;
-  }
-  
-  /* Scale SVG logo to 20% of its original size and center it */
-  .svg_logo_inatel {
-    transform: scale(0.2);
-    transform-origin: center;
-  }
-  
-  /* Grid interno: inicialmente uma coluna */
+  --main-color: #0073D1;
+  --comp-1: #0031D1;
+  --comp-2: #00B5D1;
+  --comp-3: #00D1A8;
+  --comp-4: #1200D1;
+  --white: #fff;
+}
+
+/* Aux theme overrides */
+body.aux-theme {
+  --main-color: #FA4A00;
+  --comp-1: #FA1F00;
+  --comp-2: #FA7700;
+  --comp-3: #FA002B;
+  --comp-4: #FA9D00;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arimo', sans-serif;
+  background-color: #f0f0f0;
+  padding: 16px;
+}
+
+/* Container principal centralizado */
+.container {
+  max-width: 414px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 16px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 16px;
+  border: 1px solid #ccc;
+}
+
+/* Header with theme toggle and centered SVG logo */
+.header {
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 16px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+/* Theme toggle button in top-left corner */
+.theme-toggle {
+  position: absolute;
+  left: 16px;
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* Scale SVG logo to 20% of its original size and center it */
+.svg_logo_inatel {
+  transform: scale(0.2);
+  transform-origin: center;
+}
+
+/* Grid interno: inicialmente uma coluna */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+/* Responsividade: exibir sidebar e conteúdo lado a lado em telas maiores */
+@media (min-width: 600px) {
   .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: 1fr 2fr;
   }
-  
-  /* Responsividade: exibir sidebar e conteúdo lado a lado em telas maiores */
-  @media (min-width: 600px) {
-    .grid {
-      grid-template-columns: 1fr 2fr;
-    }
-  }
-  
-  /* Sidebar (mensagens) */
-  .messages {
-    background-color: #6c757d;
-    color: var(--white);
-    padding: 16px;
-  }
-  
-  /* Conteúdo principal */
-  .content {
-    background-color: #e9ecef;
-    padding: 16px;
-  }
-  
-  /* Cartões internos */
-  .card {
-    background-color: var(--white);
-    border: 1px solid #dee2e6;
-    margin-bottom: 16px;
-    padding: 16px;
-    border-radius: 4px;
-  }
-  
-  /* Slider container for news cards with arrow buttons */
-  .slider-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-  
-  /* News slider: horizontal flex container */
-  .news-slider {
-    display: flex;
-    overflow: hidden;
-    width: 200px;
-  }
-  
-  /* News card styling */
-  .news-card {
-    flex: 0 0 auto;
-    width: 200px;
-    margin-right: 16px;
-    position: relative;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .news-card img {
-    width: 100%;
-    display: block;
-  }
-  
-  /* Title overlay on news card */
-  .news-card h3 {
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    margin: 0;
-    padding: 4px 8px;
-    background: rgba(0, 0, 0, 0.5);
-    color: var(--white);
-    border-radius: 4px;
-    font-size: 1rem;
-  }
-  
-  /* Arrow buttons styling */
-  .arrow {
-    background: var(--main-color);
-    color: var(--white);
-    border: none;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    border-radius: 4px;
-    margin: 0 8px;
-  }
-  
-  .arrow:focus {
-    outline: none;
-  }
-  
-  /* Footer styling */
-  .footer {
-    background-color: var(--main-color);
-    color: var(--white);
-    padding: 16px;
-    text-align: center;
-  }
-  
-  .modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-  }
-  
-  /* Modal content box */
-  .modal-content {
-    position: relative;
-    background: var(--white);
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 300px;
-    text-align: center;
-  }
-  
-  /* Close modal button */
-  .close-modal {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
+}
+
+/* Sidebar (mensagens) */
+.messages {
+  background-color: #6c757d;
+  color: var(--white);
+  padding: 16px;
+}
+
+/* Conteúdo principal */
+.content {
+  background-color: #e9ecef;
+  padding: 16px;
+}
+
+/* Cartões internos */
+.card {
+  background-color: var(--white);
+  border: 1px solid #dee2e6;
+  margin-bottom: 16px;
+  padding: 16px;
+  border-radius: 4px;
+}
+
+/* Slider container for news cards with arrow buttons */
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* News slider: horizontal flex container */
+.news-slider {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+}
+
+/* News card styling */
+.news-card {
+  flex: 0 0 auto;
+  width: 300px;
+  margin-right: 16px;
+  position: relative;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-card img {
+  width: 100%;
+  display: block;
+}
+
+/* Event info inside each news card */
+.event-info {
+  padding: 8px;
+  background: var(--white);
+}
+
+.event-info h3 {
+  margin: 0 0 8px;
+  font-size: 1.1rem;
+}
+
+/* Arrow buttons styling */
+.arrow {
+  background: var(--main-color);
+  color: var(--white);
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 4px;
+  margin: 0 8px;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+/* Footer styling */
+.footer {
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 16px;
+  text-align: center;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  background: var(--white);
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 300px;
+  text-align: center;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
