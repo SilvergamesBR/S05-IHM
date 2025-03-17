@@ -115,11 +115,11 @@ body {
   position: relative;
 }
 
-/* News slider: horizontal flex container */
+/* News slider: horizontal flex container, now fixed to 316px width to show one card */
 .news-slider {
   display: flex;
-  overflow-x: auto;
-  width: 100%;
+  overflow: hidden;
+  width: 316px; /* 300px card width + 16px gap */
 }
 
 /* News card styling */
