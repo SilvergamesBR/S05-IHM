@@ -119,13 +119,13 @@ body {
 .news-slider {
   display: flex;
   overflow: hidden;
-  width: 316px; /* 300px card width + 16px gap */
+  width: 276px;
 }
 
 /* News card styling */
 .news-card {
   flex: 0 0 auto;
-  width: 300px;
+  width: 260px;
   margin-right: 16px;
   position: relative;
   border: 1px solid #ddd;
