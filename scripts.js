@@ -56,8 +56,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (leftArrow && rightArrow && slider) {
     leftArrow.addEventListener('click', function () {
-      if (slider.scrollLeft - slider.clientWidth <= slider.scrollWidth - 1) {
-        slider.scrollTo({ right: 0, behavior: 'smooth' });
+      if (slider.scrollRight - slider.clientWidth <= slider.scrollWidth - 1) {
+        slider.scrollTo({ left: slider.clientWidth, behavior: 'smooth' });
       } else {
         slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
       }
