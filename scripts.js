@@ -55,12 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollAmount = 276; // card's width
 
   if (leftArrow && rightArrow && slider) {
-    leftArrow.addEventListener('click', function () {
-      if (slider.scrollRight - slider.clientWidth <= slider.scrollWidth - 1) {
-        slider.scrollTo({ left: slider.clientWidth, behavior: 'smooth' });
-      } else {
-        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-      }
+      leftArrow.addEventListener('click', function () {
+        if (slider.scrollLeft <= 0) {
+          slider.scrollTo({ left: slider.scrollWidth - slider.clientWidth, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        }
     });
 
     rightArrow.addEventListener('click', function () {
