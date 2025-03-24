@@ -52,18 +52,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const slider = document.querySelector('.news-slider');
   const leftArrow = document.querySelector('.arrow.left');
   const rightArrow = document.querySelector('.arrow.right');
-  const scrollAmount = 276; // Use the card's width as the scroll amount
-  
+  const scrollAmount = 276; // card's width
+
   if (leftArrow && rightArrow && slider) {
     leftArrow.addEventListener('click', function () {
       slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     });
-  
+
     rightArrow.addEventListener('click', function () {
       slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     });
   }
-  
+
   // Dynamic addition of event cards to the carousel
   const eventos = [
     {
@@ -107,14 +107,14 @@ document.addEventListener("DOMContentLoaded", function () {
       image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=800&h=400'
     }
   ];
-  
+
   const sliderContainer = document.querySelector('.news-slider');
   sliderContainer.innerHTML = '';
-  
+
   eventos.forEach(event => {
     const eventCard = document.createElement('div');
     eventCard.classList.add('news-card');
-  
+
     eventCard.innerHTML = `
       <img src="${event.image}" alt="${event.title}">
       <div class="event-info">
@@ -124,7 +124,27 @@ document.addEventListener("DOMContentLoaded", function () {
         <p>${event.description}</p>
       </div>
     `;
-  
+
     sliderContainer.appendChild(eventCard);
+  });
+
+  // Auto-scroll functionality: scroll every 5 seconds if not hovered, looping back to start.
+  function autoScroll() {
+    // If we've reached (or exceeded) the end, scroll back to start.
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
+      slider.scrollTo({ left: 0, behavior: 'smooth' });
+    } else {
+      slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  }
+
+  let autoScrollInterval = setInterval(autoScroll, 5000);
+
+  // Pause auto-scroll when hovering over the slider and resume when leaving.
+  slider.addEventListener('mouseenter', function () {
+    clearInterval(autoScrollInterval);
+  });
+  slider.addEventListener('mouseleave', function () {
+    autoScrollInterval = setInterval(autoScroll, 5000);
   });
 });
