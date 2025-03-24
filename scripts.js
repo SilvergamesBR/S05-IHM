@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Auto-scroll functionality: scroll every 5 seconds if not hovered, looping back to start.
   function autoScroll() {
     // If we've reached (or exceeded) the end, scroll back to start.
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 100) {
       slider.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
       slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
