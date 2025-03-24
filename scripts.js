@@ -130,8 +130,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Auto-scroll functionality: scroll every 5 seconds if not hovered, looping back to start.
   function autoScroll() {
-    // If we've reached (or exceeded) the end, scroll back to start.
-    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 100) {
+    // Check if we've reached (or nearly reached) the end.
+    if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
       slider.scrollTo({ left: 0, behavior: 'smooth' });
     } else {
       slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
@@ -140,11 +140,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let autoScrollInterval = setInterval(autoScroll, 5000);
 
-  // Pause auto-scroll when hovering over the slider and resume when leaving.
+  // Pause auto-scroll on hover and resume on mouse leave.
   slider.addEventListener('mouseenter', function () {
     clearInterval(autoScrollInterval);
   });
   slider.addEventListener('mouseleave', function () {
+    // Clear any existing interval (just in case) and reinitialize.
+    clearInterval(autoScrollInterval);
     autoScrollInterval = setInterval(autoScroll, 5000);
-  });
+  }); 
 });
