@@ -46,7 +46,7 @@ class AulasComponent extends HTMLElement {
                   <p class="p">Local e Horário: <b>${a.local} - ${a.horario}</b></p>
                   <div class="lables">
                     <div class="lable-frequencia p_lable">FALTAS: <b>${a.frequencia}</b></div>
-                    <div class="lable-nota p_lable" style="color: ${notaColor};">CR: <b>${a.nota}</b></div>
+                    <div class="lable-nota p_lable" style="background-color: ${notaColor};">CR: <b>${a.nota}</b></div>
                   </div>
                 </div>
               `;
