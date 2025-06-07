@@ -1,0 +1,58 @@
+.snacks-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.snack-card {
+  background: var(--card-bg, #f4f4f4);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.snack-card .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.snack-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.snack-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.snack-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.snack-price {
+  font-weight: 500;
+}
+
+.buy-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #1e40af;
+}
