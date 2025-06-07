@@ -69,6 +69,7 @@ body {
 .svg_logo_inatel {
   transform: scale(0.2);
   transform-origin: center;
+  color: var(--white);
 }
 
 /* Grid interno: inicialmente uma coluna */
@@ -203,5 +204,15 @@ body {
   background: transparent;
   border: none;
   font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-toggle {
+  position: absolute;
+  right: 16px;
+  background: transparent;
+  border: 0;
+  color: var(--white);
+  padding: 4px 8px;
   cursor: pointer;
 }
