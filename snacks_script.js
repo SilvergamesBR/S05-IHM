@@ -38,6 +38,9 @@ function createSnackCard(snack) {
       <button class="buy-btn">Comprar</button>
     </div>
   `;
+  
+  const buyButton = card.querySelector(".buy-btn");
+  buyButton.addEventListener("click", showPixModal);
 
   return card;
 }

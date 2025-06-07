@@ -216,3 +216,42 @@ body {
   padding: 4px 8px;
   cursor: pointer;
 }
+
+.modal-pix {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content-pix {
+  background: var(--background, #fff);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+  color: var(--text, #000);
+}
+
+.qr-image {
+  width: 200px;
+  margin: 20px 0;
+}
+
+.modal-content-pix button {
+  background-color: var(--primary, #007bff);
+  color: white;
+  border: none;
+  margin-top: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 8px;
+}

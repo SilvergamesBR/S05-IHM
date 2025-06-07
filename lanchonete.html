@@ -70,6 +70,30 @@
             <p>&copy; 2025 App Inatel. Todos os direitos reservados.</p>
         </footer>
     </div>
+
+    <div id="pixModal" class="modal hidden">
+        <div class="modal-content-pix">
+            <h2>Pagamento via PIX</h2>
+            <img src="assets/qr_pix.png" alt="QR Code Pix" class="qr-image" />
+            <p>Código PIX:</p>
+            <input type="text" readonly
+                value="00020126330014br.gov.bcb.pix0111117312416075204000053039865802BR5922LUCAS_FAJARDO_DE_MELLO6012Juiz_de_Fora610936015-00062290525MJQB428988251749339284223630459BA"
+                onclick="this.select()" />
+            <button onclick="showValidationModal()">Confirmar Pagamento</button>
+            <button onclick="closeModal('pixModal')">Fechar</button>
+        </div>
+    </div>
+
+    <!-- Modal: Validation QR Code -->
+    <div id="validateModal" class="modal hidden">
+        <div class="modal-content-pix">
+            <h2>Validar na Cantina</h2>
+            <img src="assets/qr_validate.png" alt="QR Code de Validação" class="qr-image" />
+            <p>Mostre este QR code na cantina para retirar seu pedido.</p>
+            <button onclick="closeModal('validateModal')">Fechar</button>
+        </div>
+    </div>
+
     <script src="snacks_script.js"></script>
     <script src="scripts.js"></script>
 </body>
