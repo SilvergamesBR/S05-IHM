@@ -40,7 +40,9 @@ function showValidationModal() {
   const validateModal = document.getElementById("validateModal");
   if (pixModal && validateModal) {
     pixModal.classList.add("hidden");
+    validateModal.style.display = "flex";
     validateModal.classList.remove("hidden");
+    validateModal.classList.add("show");
   }
 }
 
