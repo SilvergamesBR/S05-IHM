@@ -227,8 +227,11 @@ body {
   z-index: 1000;
 }
 
+.modal.show {
+  display: flex !important;
+}
 .modal.hidden {
-  display: none;
+  display: none !important;
 }
 
 .modal-content-pix {

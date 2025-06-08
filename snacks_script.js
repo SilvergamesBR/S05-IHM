@@ -27,12 +27,11 @@ const snacks = [
 ];
 
 function showPixModal() {
-  console.log("Modal should open for:", event.currentTarget);
   const pixModal = document.getElementById("pixModal");
   if (pixModal) {
+    pixModal.style.display = "flex";
     pixModal.classList.remove("hidden");
-  } else {
-    console.warn("Pix modal not found in DOM.");
+    pixModal.classList.add("show");
   }
 }
 
