@@ -119,13 +119,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const sliderContainer = document.querySelector('.news-slider');
   if (sliderContainer) {
     sliderContainer.innerHTML = '';
-  }
 
-  eventos.forEach(event => {
-    const eventCard = document.createElement('div');
-    eventCard.classList.add('news-card');
+    eventos.forEach(event => {
+      const eventCard = document.createElement('div');
+      eventCard.classList.add('news-card');
 
-    eventCard.innerHTML = `
+      eventCard.innerHTML = `
       <img src="${event.image}" alt="${event.title}">
       <div class="event-info">
         <h3>${event.title}</h3>
@@ -135,8 +134,13 @@ document.addEventListener("DOMContentLoaded", function () {
       </div>
     `;
 
-    sliderContainer.appendChild(eventCard);
-  });
+      sliderContainer.appendChild(eventCard);
+
+    });
+  }
+
+
+
 
   // Auto-scroll functionality: scroll every 5 seconds if not hovered, looping back to start.
   function autoScroll() {

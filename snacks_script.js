@@ -27,6 +27,7 @@ const snacks = [
 ];
 
 function showPixModal() {
+  console.log("Modal should open for:", event.currentTarget);
   const pixModal = document.getElementById("pixModal");
   if (pixModal) {
     pixModal.classList.remove("hidden");
