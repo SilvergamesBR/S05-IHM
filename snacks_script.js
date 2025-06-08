@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const snacks = [
     {
@@ -28,21 +27,28 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   function showPixModal() {
-    document.getElementById("pixModal").classList.remove("hidden");
-    if (modal) {
-      modal.classList.remove("hidden");
+    const pixModal = document.getElementById("pixModal");
+    if (pixModal) {
+      pixModal.classList.remove("hidden");
     } else {
       console.warn("Pix modal not found in DOM.");
     }
   }
 
   function showValidationModal() {
-    document.getElementById("pixModal").classList.add("hidden");
-    document.getElementById("validateModal").classList.remove("hidden");
+    const pixModal = document.getElementById("pixModal");
+    const validateModal = document.getElementById("validateModal");
+    if (pixModal && validateModal) {
+      pixModal.classList.add("hidden");
+      validateModal.classList.remove("hidden");
+    }
   }
 
   function closeModal(id) {
-    document.getElementById(id).classList.add("hidden");
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.classList.add("hidden");
+    }
   }
 
   function createSnackCard(snack) {
@@ -50,14 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
     card.className = "snack-card";
 
     card.innerHTML = `
-    <div class="emoji">${snack.emoji}</div>
-    <h2 class="snack-title">${snack.title}</h2>
-    <p class="snack-desc">${snack.description}</p>
-    <div class="snack-footer">
-      <span class="snack-price">${snack.price}</span>
-      <button class="buy-btn">Comprar</button>
-    </div>
-  `;
+      <div class="emoji">${snack.emoji}</div>
+      <h2 class="snack-title">${snack.title}</h2>
+      <p class="snack-desc">${snack.description}</p>
+      <div class="snack-footer">
+        <span class="snack-price">${snack.price}</span>
+        <button class="buy-btn">Comprar</button>
+      </div>
+    `;
 
     const buyButton = card.querySelector(".buy-btn");
     buyButton.addEventListener("click", showPixModal);
@@ -65,11 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   }
 
-  document.addEventListener("DOMContentLoaded", () => {
-    const grid = document.querySelector(".snacks-grid");
+  const grid = document.querySelector(".snacks-grid");
+  if (grid) {
     snacks.forEach(snack => {
       grid.appendChild(createSnackCard(snack));
     });
-  });
+  } else {
+    console.error("snacks-grid not found in DOM");
+  }
 
+  window.showValidationModal = showValidationModal;
+  window.closeModal = closeModal;
 });
