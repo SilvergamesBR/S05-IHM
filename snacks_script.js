@@ -25,6 +25,19 @@ const snacks = [
   }
 ];
 
+function showPixModal() {
+  document.getElementById("pixModal").classList.remove("hidden");
+}
+
+function showValidationModal() {
+  document.getElementById("pixModal").classList.add("hidden");
+  document.getElementById("validateModal").classList.remove("hidden");
+}
+
+function closeModal(id) {
+  document.getElementById(id).classList.add("hidden");
+}
+
 function createSnackCard(snack) {
   const card = document.createElement("div");
   card.className = "snack-card";
@@ -38,7 +51,7 @@ function createSnackCard(snack) {
       <button class="buy-btn">Comprar</button>
     </div>
   `;
-  
+
   const buyButton = card.querySelector(".buy-btn");
   buyButton.addEventListener("click", showPixModal);
 

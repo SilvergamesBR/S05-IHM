@@ -158,16 +158,3 @@ document.addEventListener("DOMContentLoaded", function () {
     autoScrollInterval = setInterval(autoScroll, 5000);
   }); 
 });
-
-function showPixModal() {
-  document.getElementById("pixModal").classList.remove("hidden");
-}
-
-function showValidationModal() {
-  document.getElementById("pixModal").classList.add("hidden");
-  document.getElementById("validateModal").classList.remove("hidden");
-}
-
-function closeModal(id) {
-  document.getElementById(id).classList.add("hidden");
-}
