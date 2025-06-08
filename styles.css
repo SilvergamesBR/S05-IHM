@@ -220,17 +220,17 @@ body {
 .modal-pix {
   position: fixed;
   inset: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: #00000099;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-.modal.show {
+.modal-pix.show {
   display: flex !important;
 }
-.modal.hidden {
+.modal-pix.hidden {
   display: none !important;
 }
 
