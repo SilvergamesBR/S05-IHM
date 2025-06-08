@@ -55,12 +55,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const scrollAmount = 276; // card's width
 
   if (leftArrow && rightArrow && slider) {
-      leftArrow.addEventListener('click', function () {
-        if (slider.scrollLeft <= 0) {
-          slider.scrollTo({ left: slider.scrollWidth - slider.clientWidth, behavior: 'smooth' });
-        } else {
-          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        }
+    leftArrow.addEventListener('click', function () {
+      if (slider.scrollLeft <= 0) {
+        slider.scrollTo({ left: slider.scrollWidth - slider.clientWidth, behavior: 'smooth' });
+      } else {
+        slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      }
     });
 
     rightArrow.addEventListener('click', function () {
@@ -117,7 +117,9 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   const sliderContainer = document.querySelector('.news-slider');
-  sliderContainer.innerHTML = '';
+  if (sliderContainer) {
+    sliderContainer.innerHTML = '';
+  }
 
   eventos.forEach(event => {
     const eventCard = document.createElement('div');
@@ -156,5 +158,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Clear any existing interval (just in case) and reinitialize.
     clearInterval(autoScrollInterval);
     autoScrollInterval = setInterval(autoScroll, 5000);
-  }); 
+  });
 });
