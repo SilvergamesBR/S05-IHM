@@ -27,6 +27,11 @@ const snacks = [
 
 function showPixModal() {
   document.getElementById("pixModal").classList.remove("hidden");
+  if (modal) {
+    modal.classList.remove("hidden");
+  } else {
+    console.warn("Pix modal not found in DOM.");
+  }
 }
 
 function showValidationModal() {
