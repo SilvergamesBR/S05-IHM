@@ -38,8 +38,12 @@ function showPixModal() {
 function showValidationModal() {
   const pixModal = document.getElementById("pixModal");
   const validateModal = document.getElementById("validateModal");
+  
   if (pixModal && validateModal) {
+    pixModal.style.display = "none";
     pixModal.classList.add("hidden");
+    pixModal.classList.remove("show");
+    
     validateModal.style.display = "flex";
     validateModal.classList.remove("hidden");
     validateModal.classList.add("show");
@@ -49,7 +53,9 @@ function showValidationModal() {
 function closeModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
+    modal.style.display = "none";
     modal.classList.add("hidden");
+    modal.classList.remove("show");
   }
 }
 
